@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Tunisia Taxi | Votre taxi partout en Tunisie</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#050505;
+color:white;
+
+}
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:-250px;
+right:-250px;
+
+width:700px;
+height:700px;
+
+background:#FFD40022;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+z-index:-2;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+bottom:-300px;
+left:-300px;
+
+width:700px;
+height:700px;
+
+background:#FFD40018;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+z-index:-2;
+
+}
+
+header{
+
+position:fixed;
+
+top:0;
+left:0;
+right:0;
+
+padding:22px 8%;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+background:#050505ee;
+backdrop-filter:blur(15px);
+
+border-bottom:1px solid #222;
+
+z-index:999;
+
+}
+
+.logo{
+
+font-size:28px;
+
+font-weight:800;
+
+color:#FFD400;
+
+}
+
+.logo span{
+
+color:white;
+
+}
+
+nav{
+
+display:flex;
+gap:35px;
+
+}
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#FFD400;
+
+}
+
+.hero{
+
+padding:170px 8% 120px;
+
+display:grid;
+
+grid-template-columns:1.2fr .8fr;
+
+align-items:center;
+
+gap:80px;
+
+}
+
+.small{
+
+color:#FFD400;
+
+font-weight:700;
+
+margin-bottom:15px;
+
+letter-spacing:1px;
+
+}
+
+.hero h1{
+
+font-size:70px;
+
+line-height:1.05;
+
+font-weight:800;
+
+margin-bottom:25px;
+
+}
+
+.hero p{
+
+color:#bbbbbb;
+
+font-size:19px;
+
+line-height:1.8;
+
+margin-bottom:35px;
+
+max-width:700px;
+
+}
+
+.buttons{
+
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+padding:17px 34px;
+
+border-radius:18px;
+
+font-weight:700;
+
+text-decoration:none;
+
+transition:.35s;
+
+}
+
+.primary{
+
+background:#FFD400;
+
+color:black;
+
+}
+
+.primary:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 15px 30px #FFD40055;
+
+}
+
+.secondary{
+
+border:2px solid #FFD400;
+
+color:#FFD400;
+
+}
+
+.secondary:hover{
+
+background:#FFD400;
+
+color:black;
+
+}
+
+.phone{
+
+background:#111;
+
+border:1px solid #222;
+
+padding:22px;
+
+border-radius:40px;
+
+box-shadow:0 25px 60px #000;
+
+}
+
+.screen{
+
+background:black;
+
+border-radius:28px;
+
+padding:25px;
+
+}
+
+.top{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+margin-bottom:25px;
+
+}
+
+.avatar{
+
+width:52px;
+height:52px;
+
+border-radius:50%;
+
+background:#FFD400;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-weight:800;
+
+color:black;
+
+font-size:22px;
+
+}
+
+.search{
+
+background:#FFD400;
+
+color:black;
+
+padding:18px;
+
+border-radius:20px;
+
+font-weight:700;
+
+margin:25px 0;
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+}
+
+.card{
+
+background:#111;
+
+padding:18px;
+
+border-radius:18px;
+
+text-align:center;
+
+border:1px solid #222;
+
+}
+
+.card h3{
+
+margin-top:12px;
+
+font-size:16px;
+
+}
+
+section{
+
+padding:100px 8%;
+
+}
+
+.title{
+
+font-size:45px;
+
+font-weight:800;
+
+margin-bottom:50px;
+
+text-align:center;
+
+}
+
+.features{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:25px;
+
+}
+.feature{
+background:linear-gradient(180deg,#121212,#0a0a0a);
+border:1px solid #262626;
+border-radius:28px;
+padding:32px;
+transition:.3s;
+}
+
+.feature:hover{
+transform:translateY(-6px);
+border-color:#FFD400;
+box-shadow:0 18px 45px #000;
+}
+
+.feature .icon{
+font-size:36px;
+margin-bottom:18px;
+}
+
+.feature h3{
+font-size:22px;
+margin-bottom:12px;
+}
+
+.feature p{
+color:#aaa;
+line-height:1.7;
+}
+
+.about{
+background:#0b0b0b;
+border-top:1px solid #222;
+border-bottom:1px solid #222;
+}
+
+.about-box{
+max-width:1000px;
+margin:auto;
+text-align:center;
+}
+
+.about-box p{
+color:#bbb;
+font-size:18px;
+line-height:1.8;
+}
+
+.contact-card{
+max-width:850px;
+margin:auto;
+background:linear-gradient(135deg,#FFD400,#ffb800);
+color:black;
+border-radius:35px;
+padding:45px;
+text-align:center;
+box-shadow:0 25px 60px #FFD40022;
+}
+
+.contact-card h2{
+font-size:36px;
+margin-bottom:15px;
+}
+
+.contact-card p{
+font-size:18px;
+font-weight:600;
+}
+
+footer{
+padding:35px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+border-top:1px solid #222;
+color:#aaa;
+}
+
+footer a{
+color:#FFD400;
+text-decoration:none;
+font-weight:600;
+margin-left:18px;
+}
+
+@media(max-width:900px){
+header{
+padding:18px 6%;
+}
+
+nav{
+display:none;
+}
+
+.hero{
+grid-template-columns:1fr;
+padding:130px 6% 70px;
+gap:45px;
+}
+
+.hero h1{
+font-size:44px;
+}
+
+.features{
+grid-template-columns:1fr;
+}
+
+footer{
+flex-direction:column;
+text-align:center;
+}
+
+footer a{
+margin:0 8px;
+}
+}
+
+@media(max-width:480px){
+.hero h1{
+font-size:36px;
+}
+
+.title{
+font-size:32px;
+}
+
+.buttons{
+flex-direction:column;
+}
+
+.btn{
+text-align:center;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🚖 Tunisia <span>Taxi</span></div>
+
+  <nav>
+    <a href="#home">Accueil</a>
+    <a href="#features">Fonctionnalités</a>
+    <a href="privacy-policy.html">Confidentialité</a>
+    <a href="terms.html">Conditions</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="home" class="hero">
+
+  <div>
+    <div class="small">TRANSPORT URBAIN EN TUNISIE</div>
+
+    <h1>Votre taxi, en quelques secondes.</h1>
+
+    <p>
+      Tunisia Taxi est une application de réservation de taxi pensée pour les
+      déplacements quotidiens en Tunisie. Réservez, suivez votre chauffeur,
+      consultez une estimation du prix et gardez l'historique de vos courses.
+    </p>
+
+    <div class="buttons">
+      <a href="#" class="btn primary">Bientôt sur Google Play</a>
+      <a href="privacy-policy.html" class="btn secondary">Politique de confidentialité</a>
+    </div>
+  </div>
+
+  <div class="phone">
+    <div class="screen">
+      <div class="top">
+        <div>
+          <p style="color:#aaa;margin-bottom:6px;">Bonjour 👋</p>
+          <h2>Tunisia Taxi</h2>
+        </div>
+        <div class="avatar">TT</div>
+      </div>
+
+      <div class="search">📍 Où souhaitez-vous aller ?</div>
+
+      <div class="cards">
+        <div class="card">
+          🚖
+          <h3>Course</h3>
+        </div>
+        <div class="card">
+          💰
+          <h3>Prix estimé</h3>
+        </div>
+        <div class="card">
+          🗺️
+          <h3>Suivi GPS</h3>
+        </div>
+        <div class="card">
+          🔒
+          <h3>Sécurisé</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<section id="features">
+  <h2 class="title">Fonctionnalités principales</h2>
+
+  <div class="features">
+    <div class="feature">
+      <div class="icon">📍</div>
+      <h3>Localisation GPS</h3>
+      <p>Affichez votre position, choisissez une destination et trouvez les chauffeurs proches.</p>
+    </div>
+
+    <div class="feature">
+      <div class="icon">🚖</div>
+      <h3>Réservation de taxi</h3>
+      <p>Commandez une course rapidement avec une interface simple et moderne.</p>
+    </div>
+
+    <div class="feature">
+      <div class="icon">💰</div>
+      <h3>Prix estimé</h3>
+      <p>Consultez une estimation du prix selon la distance et les paramètres du trajet.</p>
+    </div>
+
+    <div class="feature">
+      <div class="icon">🗺️</div>
+      <h3>Suivi de course</h3>
+      <p>Suivez l’évolution de votre trajet et l’état de la course en temps réel.</p>
+    </div>
+
+    <div class="feature">
+      <div class="icon">👤</div>
+      <h3>Client & Chauffeur</h3>
+      <p>Deux espaces adaptés : un pour réserver, l’autre pour recevoir et gérer les courses.</p>
+    </div>
+
+    <div class="feature">
+      <div class="icon">🔒</div>
+      <h3>Connexion sécurisée</h3>
+      <p>Authentification avec compte utilisateur et protection des informations personnelles.</p>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="about-box">
+    <h2 class="title">Pensée pour la Tunisie</h2>
+    <p>
+      Tunisia Taxi vise à offrir une expérience de transport claire, rapide et accessible.
+      L'application permet aux clients et aux chauffeurs d'interagir plus facilement,
+      avec une interface moderne, un suivi GPS et une estimation transparente du prix.
+    </p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-card">
+    <h2>Contact</h2>
+    <p>Pour toute question ou demande de support :</p>
+    <p>dhahriamine991@gmail.com</p>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 Tunisia Taxi — Tous droits réservés.</div>
+  <div>
+    <a href="privacy-policy.html">Confidentialité</a>
+    <a href="terms.html">Conditions</a>
+  </div>
+</footer>
+
+</body>
+</html>
